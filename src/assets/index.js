@@ -1,0 +1,7 @@
+/**
+ * @author Abdul Halith
+ * @email abd.halith994@gmail.com
+ * @create date 2020-11-27
+ * @modify date 2020-05-08
+ * @desc Exporting all the assets from /src/assets
+ */
