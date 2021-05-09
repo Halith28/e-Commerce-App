@@ -1,5 +1,12 @@
 import React, { useState, useEffect } from "react";
+//material-table has imported here
 import MaterialTable from "material-table";
+
+/* In this Table component, material-table plays major role.
+  Material-table is a npm-package (to install --> npm i material-table)
+  It is come up with many features and it reduces code weight and length.
+  We can customize this Material-table by following their documentation.
+  Here is the documentation(`https://material-table.com/#/`) */
 
 const Table = (props) => {
   const [gridData, setGridData] = useState({
@@ -51,6 +58,7 @@ const Table = (props) => {
   console.log(gridData);
 
   return (
+    // Material-table starts here
     <MaterialTable
       title="Shop Bridge"
       columns={gridData.columns}
@@ -74,6 +82,7 @@ const Table = (props) => {
         actionsColumnIndex: -1,
       }}
     />
+    // Material-table ends here
   );
 };
 

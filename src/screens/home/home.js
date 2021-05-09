@@ -2,12 +2,14 @@ import { Grid, makeStyles, TextField } from "@material-ui/core";
 import React from "react";
 import Table from "./table";
 
+// this styling to make good appearance in Home Component
 const useStyles = makeStyles((theme) => ({
   root: {
     padding: 20,
   },
 }));
 
+// this JSON has passed into Table component for displaying data in Table.
 const data = [
   {
     name: "Samsung Galaxy S10",
@@ -75,7 +77,8 @@ const data = [
   },
 ];
 
-const comonscol = [
+// this JSON passed into table component for setting Columns in Table.
+const columns = [
   {
     title: "Name",
     field: "name",
@@ -108,11 +111,16 @@ const comonscol = [
   },
 ];
 
+// HomeComponent has constructed here
 const HomeComponent = () => {
   const classes = useStyles();
   return (
     <Grid className={classes.root}>
-      <Table col={comonscol} data={data} />
+      {/* Table Compoent starts here */}
+
+      <Table col={columns} data={data} />
+
+      {/* Table Compoent ends here */}
     </Grid>
   );
 };
