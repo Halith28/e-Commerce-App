@@ -1,14 +1,6 @@
-import {
-  Grid,
-  Input,
-  makeStyles,
-  InputAdornment,
-  Typography,
-  TextField,
-} from "@material-ui/core";
+import { Grid, makeStyles, TextField } from "@material-ui/core";
 import React from "react";
 import Table from "./table";
-import TableNew from "./tableNew";
 
 const useStyles = makeStyles((theme) => ({
   root: {
@@ -121,7 +113,6 @@ const HomeComponent = () => {
   return (
     <Grid className={classes.root}>
       <Table col={comonscol} data={data} />
-      {/* <TableNew /> */}
     </Grid>
   );
 };

@@ -5,7 +5,6 @@ import Toolbar from "@material-ui/core/Toolbar";
 import IconButton from "@material-ui/core/IconButton";
 import Typography from "@material-ui/core/Typography";
 import { MeetingRoom } from "@material-ui/icons";
-import { LocalStorageKeys } from "../../../utils";
 import MenuIcon from "@material-ui/icons/Menu";
 import { Drawer } from "@material-ui/core";
 import { SideNavBar } from "..";
@@ -59,9 +58,6 @@ export const TopNavBar = (props) => {
             <Typography className={classes.title} variant="h6" noWrap>
               e-Commerce App
             </Typography>
-            {/* <Typography variant="caption">
-              {`v${localStorage.getItem(LocalStorageKeys.version)}`}
-            </Typography> */}
           </div>
 
           <div className={classes.grow} />
