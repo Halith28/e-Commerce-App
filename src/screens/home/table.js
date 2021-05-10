@@ -8,10 +8,11 @@ import MaterialTable from "material-table";
   We can customize this Material-table by following their documentation.
   Here is the documentation(`https://material-table.com/#/`) */
 
+// Table Component starts here
 const Table = (props) => {
   const [gridData, setGridData] = useState({
     data: props.data,
-    columns: props.col,
+    columns: props.columns,
     resolve: () => {},
     updatedAt: new Date(),
   });
@@ -21,19 +22,25 @@ const Table = (props) => {
     console.log("RESOLVE AT:", gridData.updatedAt);
   }, [gridData]);
 
+  // onRowAdd function to Add New Row in table
   const onRowAdd = (newData) =>
     new Promise((resolve, reject) => {
+      // check the newData here
       if (!newData.name || !newData.price) {
         reject();
+        alert("Enter some values in required fields of Name and Price");
         return;
       }
       resolve();
+      // Copy current state data to a new array
       const data = [...gridData.data];
+      // update state with the new array
       data.push(newData);
       const updatedAt = new Date();
       setGridData({ ...gridData, data, updatedAt, resolve });
     });
 
+  // onRowUpdate function to update existing Row in table
   const onRowUpdate = (newData, oldData) =>
     new Promise((resolve, reject) => {
       // Copy current state data to a new array
@@ -47,15 +54,19 @@ const Table = (props) => {
       setGridData({ ...gridData, data, updatedAt, resolve });
     });
 
+  // onRowDelete function to delete existing Row in table
   const onRowDelete = (oldData) =>
     new Promise((resolve, reject) => {
+      // Copy current state data to a new array
       let data = [...gridData.data];
+      // Get edited row index
       const index = data.indexOf(oldData);
+      // delete the oldData
       data.splice(index, 1);
+      // update state with the new array
       const updatedAt = new Date();
       setGridData({ ...gridData, data, updatedAt, resolve });
     });
-  console.log(gridData);
 
   return (
     // Material-table starts here
@@ -85,5 +96,6 @@ const Table = (props) => {
     // Material-table ends here
   );
 };
+// Table Component ends here
 
 export default Table;

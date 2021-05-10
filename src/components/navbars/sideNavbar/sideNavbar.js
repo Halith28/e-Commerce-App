@@ -61,7 +61,7 @@ export const SideNavBar = (props) => {
                 onClick={(e) => onListClick(navBar)}
                 button
                 key={index}
-                selected={isSelected(navBar)}
+                selected={String(isSelected(navBar)) === "true"}
               >
                 <ListItemIcon>{navBar.icon}</ListItemIcon>
 

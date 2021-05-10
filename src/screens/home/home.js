@@ -1,4 +1,4 @@
-import { Grid, makeStyles, TextField } from "@material-ui/core";
+import { Grid, makeStyles } from "@material-ui/core";
 import React from "react";
 import Table from "./table";
 
@@ -93,12 +93,6 @@ const columns = [
   {
     title: "InStock",
     field: "in_stock",
-    editComponent: (props) => (
-      <TextField
-        defaultValue={props.value || "0 Units"}
-        onChange={(e) => props.onChange(e.target.value)}
-      />
-    ),
   },
   {
     title: "Price",
@@ -118,7 +112,7 @@ const HomeComponent = () => {
     <Grid className={classes.root}>
       {/* Table Compoent starts here */}
 
-      <Table col={columns} data={data} />
+      <Table columns={columns} data={data} />
 
       {/* Table Compoent ends here */}
     </Grid>
